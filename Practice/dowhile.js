@@ -1,4 +1,4 @@
-let x=10;
+let x=5;
 do
 {
     console.log(x)
