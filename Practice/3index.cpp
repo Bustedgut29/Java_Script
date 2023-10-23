@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int target,array_size,i,j;
+    int target,array_size,i,j,k;
     cout<<"Enter the target value=";
     cin>>target;
     cout<<"Enter the array size=";
@@ -17,11 +17,15 @@ int main()
     {
         for(j=array_size; j>=0; j--)
         {
-            if(array[i]+array[j]==target)
+            for(k=0; k<array_size; k++)
             {
-                cout<<"\nthe index is="<<i;
-                break;
+                if(array[i]+array[j]+array[k]==target)
+                {
+                    cout<<"\nthe index is="<<i;
+                    break;
+                }
             }
         }
     }
+
 }
