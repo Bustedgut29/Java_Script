@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function submit()
+            {
+                var x = document.myform.name.value;
+                let y = document.myform.password.value;
+                if(x == null || name=="")
+                {
+                    document.getElementById('incorrect').innerHTML = "pls enter your name";
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form action="" name="myform" onsubmit="submit()">
+            <label>Name</label><input type="text" placeholder="full name" name="name"><br>
+            <label>Password</label><input type="password" placeholder="min. 6 characters"><br>
+            <input type="submit" value="register">
+        </form>
+        <p id="incorrect"></p>
+    </body>
+</html>
