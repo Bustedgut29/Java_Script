@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <script>
+            function setcookie ()
+            {
+                document.cookie = "Gajen Singh";
+            }
+            function getcookies()
+            {
+                if(document.cookie.length == 0)
+                {
+                    alert("cookies not avilable")
+                }
+                else
+                {
+                    alert(document.cookie);
+                }
+            }
+        </script>
+        <input type="button" value="setcookie" onclick="setcookie()">
+        <input type="button" value="getcookies" onclick="getcookies()">
+    </body>
+</html>

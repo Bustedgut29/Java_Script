@@ -1,24 +1,26 @@
 <html>
-    <head>
+    <body>
         <script>
             function submit()
-            {
-                var x = document.myform.name.value;
-                let y = document.myform.password.value;
-                if(x == null || name=="")
-                {
-                    document.getElementById('incorrect').innerHTML = "pls enter your name";
+            {  
+                var name = document.myform.name.value;  
+                var password = document.myform.password.value;
+                if (name=="")
+                {  
+                    alert("Name can't be blank");  
+                    return false;  
                 }
-            }
-            
+                else if(password.length<6)
+                {  
+                    alert("Password must be at least 6 characters long.");  
+                    return false;  
+                }  
+            } 
         </script>
-    </head>
-    <body>
         <form action="" name="myform" onsubmit="submit()">
             <label>Name</label><input type="text" placeholder="full name" name="name"><br>
-            <label>Password</label><input type="password" placeholder="min. 6 characters"><br>
+            <label>Password</label><input type="password" placeholder="min. 6 characters" name="password"><br>
             <input type="submit" value="register">
         </form>
-        <p id="incorrect"></p>
     </body>
 </html>
