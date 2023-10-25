@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <div style="margin-left: 33%; margin-top: 5px; border: 1px solid white;  border-radius: 4px; box-shadow: 5px 5px 6px; width: 360px;">
+         <h1 align="center">To Do App</h1>
+         <div align="center" style="margin-bottom: 10px;">
+             <input type="text" id="inp">
+             <button onclick="Add()">Add</button>
+         </div>
+         <div class="text">
+             
+         </div>
+        </div>
+        <script>
+            let inputs = document.getElementById("inp");
+            let text = document.querySelector(".text");
+            function Add(){
+            let newEle = document.createElement("ul");
+            newEle.innerHTML=`${inputs.value} <i >Remove</i>`;
+            text.appendChild(newEle);
+            inputs.value="";
+            newEle.querySelector("i").addEventListener("click" , remove);
+            function remove()
+            {
+            newEle.remove()
+            }
+    }
+    </script>
+     </body>     
+</html>

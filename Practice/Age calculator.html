@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <style>
+            .box {
+                margin: auto;
+                margin-top: 220px;
+                width: 450px;
+                height: 400px;
+                background-color: dodgerblue;
+                text-align: center;
+                border-radius: 5px;
+            }
+            .bh {
+                padding-top: 20px;
+                font-size: 50px;
+                color: white;
+            }
+            .bp {
+                padding-top: 20px;
+                font-size: 25px;
+                color: white;
+                font-weight: 900;
+            }
+            .date {
+                width: 80%;
+                border: 2px white solid;
+                font-size: 20px;
+                height: 40px;
+                margin-top: 30px;
+                padding: 5px 8px;
+                border-radius: 5px;
+            }
+            .button {
+                margin-top: 30px;
+                padding: 6px 10px;
+                border-radius: 10px;
+                width: 200px;
+                height: 50px;
+                font-size: 20px;
+                background-color: rgb(212, 22, 22)
+            }
+            .result {
+                font-size: 25px;
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="bh">Age Calculator</div>
+            <div class="bp">Enter Your Date of Birth : </div>
+            <input type="date" class="date" id="date">
+            <input type="button" value="Calculate Age" onclick="Calculate()" class="button">
+            <p class="result" id="calc"> </p>
+        </div>
+    </body>
+</html>
+<script>
+    function Calculate() {
+        let dateOfBirth = document.getElementById('date').value;
+        let birthYear = new Date(dateOfBirth).getFullYear();
+        let currentYear = new Date().getFullYear();
+        let birthMonth = new Date(dateOfBirth).getMonth();
+        let currentMonth = new Date().getMonth();
+        let birthDate = new Date(dateOfBirth).getDate();
+        let currentDate = new Date().getDate();
+        let date = currentDate - birthDate;
+        let month = currentMonth - birthMonth;
+        let year = currentYear - birthYear;
+        document.getElementById('calc').innerHTML = "Your Age is Approximately " + year + "year " + month + "month "+ date + "Day";
+    }
+</script>
