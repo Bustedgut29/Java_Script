@@ -41,32 +41,33 @@
             }
             .result {
                 font-size: 25px;
-                color: green;
+                color: White;
             }
         </style>
     </head>
     <body>
         <div class="box">
-            <div class="bh">Age Calculator</div>
+            <div class="bh">Age Calculator</div> 
             <div class="bp">Enter Your Date of Birth : </div>
             <input type="date" class="date" id="date">
             <input type="button" value="Calculate Age" onclick="Calculate()" class="button">
             <p class="result" id="calc"> </p>
         </div>
+        <script>
+            function Calculate() {
+                let dateOfBirth = document.getElementById('date').value;
+                let birthYear = new Date(dateOfBirth).getFullYear();
+                let currentYear = new Date().getFullYear();
+                let birthMonth = new Date(dateOfBirth).getMonth();
+                let currentMonth = new Date().getMonth();
+                let birthDate = new Date(dateOfBirth).getDate();
+                let currentDate = new Date().getDate();
+                let date = currentDate - birthDate;
+                let month = currentMonth - birthMonth;
+                let year = currentYear - birthYear;
+                //document.getElementById('calc').innerHTML = "Your Age is " + year + "year " + month + "month "+ date + "Day";
+                document.getElementById('calc').innerHTML = birthYear;
+            }
+        </script>
     </body>
 </html>
-<script>
-    function Calculate() {
-        let dateOfBirth = document.getElementById('date').value;
-        let birthYear = new Date(dateOfBirth).getFullYear();
-        let currentYear = new Date().getFullYear();
-        let birthMonth = new Date(dateOfBirth).getMonth();
-        let currentMonth = new Date().getMonth();
-        let birthDate = new Date(dateOfBirth).getDate();
-        let currentDate = new Date().getDate();
-        let date = currentDate - birthDate;
-        let month = currentMonth - birthMonth;
-        let year = currentYear - birthYear;
-        document.getElementById('calc').innerHTML = "Your Age is Approximately " + year + "year " + month + "month "+ date + "Day";
-    }
-</script>

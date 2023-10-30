@@ -1,0 +1,75 @@
+<html>
+    <style>
+        .box {
+            margin: auto;
+            margin-top: 120px;
+            width: 450px;
+            height: 550px;
+            background-color: dodgerblue;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .bh {
+            padding-top: 20px;
+            font-size: 50px;
+            color: white;
+        }
+        .bp {
+            padding-top: 20px;
+            font-size: 25px;
+            color: white;
+            font-weight: 900;
+        }
+        .date {
+            width: 80%;
+            border: 2px white solid;
+            font-size: 20px;
+            height: 40px;
+            margin-top: 30px;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+        .button {
+            margin-top: 30px;
+            padding: 6px 10px;
+            border-radius: 10px;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            background-color: rgb(212, 22, 22)
+        }
+        .result {
+            font-size: 25px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="bh">Age differnce Calculator</div>
+        <div class="bp">Enter first Date of Birth : </div>
+        <input type="date" class="date" id="date1">
+        <div class="bp">Enter second Date of Birth : </div>
+        <input type="date" class="date" id="date2">
+        <input type="button" value="Calculate Difference" onclick="Calculate()" class="button">
+        <p class="result" id="calc"> </p>
+    </div>
+    <script>
+        function Calculate()
+        {
+            let first_DOB = document.getElementById('date1').value;
+            let second_DOB = document.getElementById('date2').value;
+            let first_year = new Date(first_DOB).getFullYear;
+            let second_year = new Date(second_DOB).getFullYear;
+            let first_month = new Date(first_DOB).getMonth;
+            let second_month = new Date(second_DOB).getMonth;
+            let first_date = new Date(first_DOB).getDate;
+            let second_date = new Date(second_DOB).getDate;
+            let year = first_year - second_year; 
+            let month = first_month - second_month;
+            let date = first_date - second_date;
+            document.getElementById('calc').innerHTML = "The diffrence is " + year + "year " + month + "month " + date + "day " + hours + "hours ";
+            }
+    </script>
+</body>
+</html>
